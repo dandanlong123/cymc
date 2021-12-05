@@ -1,5 +1,6 @@
 package me.CHANGEME.slimefunaddon;
 
+import io.github.seggan.liquid.categories.MixerCategory;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -13,7 +14,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
-public class ExampleAddon extends JavaPlugin implements SlimefunAddon {
+public class  ExampleAddon extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onEnable() {

@@ -1,5 +1,5 @@
 ## CHANGE this to the name of your plugin.
-name: SlimefunAddon
+name: cymc
 
 ## CHANGE this to your username.
 author: CHANGEME
@@ -7,7 +7,7 @@ author: CHANGEME
 ## CHANGE this to a meaninful but short description of your plugin.
 description: A generic Slimefun4-Addon
 
-## CHANGE this to the path of the class that extends JavaPlugin.
+## MelterCHANGE 将此更改为扩展 JavaPlugin 的类的路径。
 main: me.CHANGEME.slimefunaddon.ExampleAddon
 
 ## You can change this to link to your website or repository. You can also remove this line if you want to.
