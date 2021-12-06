@@ -1,4 +1,4 @@
-package me.CHANGEME.slimefunaddon;
+package me.CHANGEME.cymc;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -17,14 +17,14 @@ public class  ExampleAddon extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onEnable() {
-        // Read something from your config.yml
+        // 从config.yml中读取一些内容
         Config cfg = new Config(this);
 
         if (cfg.getBoolean("options.auto-update")) {
             // 例如，您可以启动自动更新程序
         }
         getLogger().info("****************");
-        getLogger().info("*****我的插件*****");
+        getLogger().info("*****我的slimefun插件*****");
         getLogger().info("****************");
 
         /*
