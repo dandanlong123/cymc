@@ -21,41 +21,46 @@ public class  ExampleAddon extends JavaPlugin implements SlimefunAddon {
         Config cfg = new Config(this);
 
         if (cfg.getBoolean("options.auto-update")) {
-            // You could start an Auto-Updater for example
+            // 例如，您可以启动自动更新程序
         }
+        getLogger().info("****************");
+        getLogger().info("*****我的插件*****");
+        getLogger().info("****************");
 
         /*
-         * 1. Creating a new Category
-         * This Category will use the following ItemStack
+         * 1. 创建新类别
+         * 此类别将使用以下ItemStack
          */
-        ItemStack itemGroupItem = new CustomItemStack(Material.DIAMOND, "&4Addon Category", "", "&a> Click to open");
+        ItemStack itemGroupItem = new CustomItemStack(Material.DIAMOND, "&4附加类别", "", "&a> 点击打开");
 
-        // Give your Category a unique id.
+        // 给你的类别一个唯一的id。
         NamespacedKey itemGroupId = new NamespacedKey(this, "addon_category");
         ItemGroup itemGroup = new ItemGroup(itemGroupId, itemGroupItem);
 
         /*
-         * 2. Create a new SlimefunItemStack
-         * This class has many constructors, it is very important
-         * that you give each item a unique id.
+         * 2. 创建一个新的SlimefunItemStack
+         * 这个类有很多构造函数，这非常重要
+         * 给每个项目一个唯一的id.
          */
-        SlimefunItemStack slimefunItem = new SlimefunItemStack("COOL_DIAMOND", Material.DIAMOND, "&4Cool Diamond", "&c+20% Coolness");
+        SlimefunItemStack slimefunItem = new SlimefunItemStack("COOL_DIAMOND", Material.DIAMOND, "&4酷钻石", "&c+20% 冷静");
 
         /*
-         * 3. Creating a Recipe
-         * The Recipe is an ItemStack Array with a length of 9.
-         * It represents a Shaped Recipe in a 3x3 crafting grid.
-         * The machine in which this recipe is crafted in is specified
-         * further down as the RecipeType.
+         * 3. 制作食谱
+         * 配方是一个长度为9的ItemStack数组。
+         * 它代表3x3工艺网格中的成型配方。
+         * 指定了制作此配方的机器
+         * 进一步向下为RecipeType。
          */
-        ItemStack[] recipe = { new ItemStack(Material.EMERALD), null, new ItemStack(Material.EMERALD), null, new ItemStack(Material.DIAMOND), null, new ItemStack(Material.EMERALD), null, new ItemStack(Material.EMERALD) };
+        ItemStack[] recipe = { new ItemStack(Material.EMERALD), null, new ItemStack(Material.EMERALD),
+             null, new ItemStack(Material.DIAMOND), null, 
+             new ItemStack(Material.EMERALD), null, new ItemStack(Material.EMERALD) };
 
         /*
-         * 4. Registering the Item
-         * Now you just have to register the item.
-         * RecipeType.ENHANCED_CRAFTING_TABLE refers to the machine in
-         * which this item is crafted in.
-         * Recipe Types from Slimefun itself will automatically add the recipe to that machine.
+         * 4. 登记项目
+         * 现在您只需注册该项目。
+         * RecipeType.ENHANCED_CRAFTING_TABLE是指中的机器
+         * 在其中制作此项目。
+         * Slimefun本身的配方类型将自动将配方添加到该机器。
          */
         SlimefunItem item = new SlimefunItem(itemGroup, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
         item.register(this);
@@ -63,20 +68,20 @@ public class  ExampleAddon extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onDisable() {
-        // Logic for disabling the plugin...
+        // 禁用插件的逻辑。。。
     }
 
     @Override
     public String getBugTrackerURL() {
-        // You can return a link to your Bug Tracker instead of null here
+        // 您可以在此处返回指向Bug跟踪器的链接，而不是null
         return null;
     }
 
     @Override
     public JavaPlugin getJavaPlugin() {
         /*
-         * You will need to return a reference to your Plugin here.
-         * If you are using your main class for this, simply return "this".
+         * 您需要在此处返回对插件的引用。
+         * 如果您使用的是主类，只需返回“this”。
          */
         return this;
     }
